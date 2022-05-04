@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import kale from './images/kale-cut.png'
-import './App.css';
+import './index.css';
+import Features from './components/Features';
+import Footer from './components/Footer';
+import Welcome from './components/Welcome';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={kale} alt="Kale Yeah" />
-        <p>
-          Hello, World!
-        </p>
-        <a
-          className="App-link"
-          href="https://memegenerator.net/instance/75219242/the-most-interesting-man-in-the-world-i-dont-always-eat-kale-but-when-i-do-i-dont"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Is Kale Actually Good For You?
-        </a>
-      </header>
+    <div className="container">
+      {/* <Header /> */}
+      <Welcome />
+      <Features />
+      <Footer />
     </div>
   );
 }
