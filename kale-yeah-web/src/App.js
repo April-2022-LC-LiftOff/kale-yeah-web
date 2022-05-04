@@ -1,18 +1,17 @@
+import { Route, Routes } from 'react-router-dom';
+
 import './index.css';
-import Features from './components/Features';
-import Footer from './components/Footer';
-import Welcome from './components/Welcome';
-import Header from './components/Header';
+import LandingPage from './pages/Landing';
 
 function App() {
   return (
-    <div className="container">
-      {/* <Header /> */}
-      <Welcome />
-      <Features />
-      <Footer />
+    <div>
+      <Routes>
+        <Route path='/' element={<LandingPage />} exact/>
+      </Routes>
     </div>
   );
+
 }
 
 export default App;

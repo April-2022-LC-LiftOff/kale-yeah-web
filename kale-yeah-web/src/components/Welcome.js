@@ -1,13 +1,16 @@
+import classes from "./Welcome.module.css";
+
+
 const Welcome = () => {
   return (
-    <div className="welcome-container">
+    <div className={classes.welcomeContainer}>
       
-      <div className="welcome-box">
-        <p className="kale-yeah">Kale Yeah!</p>
+      <div className={classes.welcomeBox}>
+        <p className={classes.kaleYeah}>Kale Yeah!</p>
         <p>Lettuce be thankful for this app.</p>
         </div>
 
-      <div className="welcome-box">
+      <div className={classes.welcomeBox}>
       </div>
       
     </div>
