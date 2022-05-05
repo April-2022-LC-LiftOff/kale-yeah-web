@@ -13,6 +13,8 @@
         border: 1px black solid;
         padding-bottom: 200px;
         box-shadow: 3px 2px 2px black;
+        margin-top: 10px;
+        padding-top: 10px
       }
     
 }

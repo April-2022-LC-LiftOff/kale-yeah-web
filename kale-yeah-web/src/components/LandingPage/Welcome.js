@@ -1,5 +1,5 @@
 import classes from "./Welcome.module.css";
-import Login from "../Login";
+
 
 
 const Welcome = () => {
@@ -8,11 +8,11 @@ const Welcome = () => {
       
       <div className={classes.welcomeBox}>
         <p className={classes.kaleYeah}>Kale Yeah!</p>
-        <p>Lettuce be thankful for this app.</p>
+        {/* <p>Lettuce be thankful for this app.</p> */}
         </div>
 
       <div className={classes.welcomeBox}>
-        <Login />
+
       </div>
       
     </div>
