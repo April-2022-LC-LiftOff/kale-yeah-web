@@ -1,4 +1,5 @@
 import classes from "./Welcome.module.css";
+import Login from "../Login";
 
 
 const Welcome = () => {
@@ -11,6 +12,7 @@ const Welcome = () => {
         </div>
 
       <div className={classes.welcomeBox}>
+        <Login />
       </div>
       
     </div>

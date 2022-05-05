@@ -1,8 +1,8 @@
 import classes from './Features.module.css';
 
-const Tomatoes = require('../images/tomatoes.png');
-const Recipe = require('../images/recipe.jpg');
-const List = require('../images/list.png');
+const Tomatoes = require('../../images/tomatoes.png');
+const Recipe = require('../../images/recipe.jpg');
+const List = require('../../images/list.png');
 
 
 const Features = () => {

@@ -5,9 +5,9 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      background: url("../images/kale1.png");
+      background: url("../../images/kale1.png");
       background-repeat: no-repeat;
-      background-position: 80% 0;
+      background-position: 100% 0;
       margin-top: 15px;
       padding-bottom: 15px;
       height: 520px;

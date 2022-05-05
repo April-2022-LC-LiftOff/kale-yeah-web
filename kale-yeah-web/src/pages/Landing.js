@@ -1,6 +1,6 @@
-import Features from '../components/Features';
-import Footer from '../components/Footer';
-import Welcome from '../components/Welcome';
+import Features from '../components/LandingPage/Features';
+import Footer from '../components/Navigation/Footer';
+import Welcome from '../components/LandingPage/Welcome';
 
 const LandingPage = () => {
   return (
