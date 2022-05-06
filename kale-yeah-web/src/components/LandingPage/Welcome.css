@@ -1,14 +1,14 @@
 @media(min-width:768px) {
 
 
-    .welcomeContainer {
+    .welcome-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
       background: url("../../images/kale1.png");
       background-repeat: no-repeat;
       background-position: 100% 0;
-      margin-top: 15px;
+      margin-top: -20px;
       padding-bottom: 15px;
       height: 520px;
       max-width: 1024px;
@@ -18,7 +18,7 @@
   
 @media(max-width:767px) {
     
-    .welcomeContainer{
+    .welcome-container{
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
@@ -30,24 +30,24 @@
     
 }
 
-.kaleYeah {
+.kale-yeah {
   font-family: 'Pristina', sans-serif;
   font-size: 75px;
   font-weight: bold;
 }
+
   
-.welcomeBox {
+.welcome-box {
   flex-basis: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  line-height: 0%;
+  line-height: 280%;
   padding-bottom: 50px;
   text-align: center;
-  border: 1px black solid;
 }
 
-.welcomeContainer {
+.welcome-container {
   font-family: 'Gadugi', sans-serif;
 }
