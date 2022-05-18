@@ -1,4 +1,5 @@
 import "./Welcome.css";
+import Login from "./Login";
 
 const Welcome = () => {
   return (
@@ -10,7 +11,7 @@ const Welcome = () => {
         </div>
 
       <div className="welcome-box">
-
+        <div className="login"><Login /></div>
       </div>
       
     </div>
