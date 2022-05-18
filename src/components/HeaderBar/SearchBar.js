@@ -11,6 +11,22 @@ const SearchBar = ({ placeholder, data}) => {
   // This will also need an onSubmit handler that takes you
   // to a search results page.
 
+  const [ingredientsChecked, setIngredientsChecked] = useState(false);
+  const [recipesChecked, setRecipesChecked] = useState(false);
+  const ingredientCheckHandler = () => {
+        setIngredientsChecked(!ingredientsChecked);
+        if (recipesChecked === true) {
+            setRecipesChecked(false);
+        }  
+  };
+  const recipeCheckHandler = () => {
+        setRecipesChecked(!recipesChecked);
+        if (ingredientsChecked === true) {
+            setIngredientsChecked(false);
+        }
+  };  
+
+
   const [filteredData, setFilteredData] = useState([]);
   //this will be used to show dropdown of results
 
@@ -39,8 +55,9 @@ const SearchBar = ({ placeholder, data}) => {
 
     return (
     <div className='search'>
-        <div className='searchInputs'>
+        <div className='search-inputs'>
             <input 
+              className='search-box'
               type="text" 
               placeholder={placeholder} 
               value={wordEntered}
@@ -63,19 +80,30 @@ const SearchBar = ({ placeholder, data}) => {
         </div>
         )}
         
-        <div className='checkboxes'>
-            <label>
-                <input type='checkbox' />
+        <div className='checkboxes' id='checkboxes'>
+            <label className='check-input'>
+                <input 
+                type='checkbox'
+                checked={ingredientsChecked}
+                onChange={ingredientCheckHandler}
+                 />
                 Ingredients
             </label>
-            <label>
-                <input type='checkbox' />
+            <label className='check-input'>
+                <input 
+                type='checkbox'
+                checked={recipesChecked}
+                onChange={recipeCheckHandler}
+                 />
                 Recipes
             </label>
         </div>
-
-      
+        
+        
+        
     </div>
+    
+    
   );
 }
 

@@ -51,3 +51,8 @@
 .welcome-container {
   font-family: 'Gadugi', sans-serif;
 }
+
+.login{
+  display: flex;
+}
+
