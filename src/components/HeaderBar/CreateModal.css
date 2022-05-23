@@ -1,0 +1,20 @@
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    font-family: 'Gadugi', sans-serif;
+    border: 1px black solid;
+  }
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+button {
+    margin: 5px;
+}
