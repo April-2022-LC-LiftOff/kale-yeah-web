@@ -6,10 +6,9 @@ import Header from '../HeaderBar/Header'
 const LandingPage = () => {
   return (
       <div>
-      <Header />
-      {/* <Welcome />
+      <Welcome />
       <Features />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }

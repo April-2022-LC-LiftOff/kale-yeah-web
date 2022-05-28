@@ -1,0 +1,27 @@
+.view-list h1 {
+    font-size: 80px;
+    margin-top: 35px;
+    margin-left: 10px;
+    color: black;
+}
+
+.list-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1024px;
+    flex-direction: row;
+    margin-top: -20px;
+}
+
+.container-left {
+    display: flex;
+    flex-basis: 100%;
+    flex: 2;
+    border-right: solid
+}
+
+.container-right {
+    display: flex;
+    flex-basis: 100%;
+    flex: 1;
+}
