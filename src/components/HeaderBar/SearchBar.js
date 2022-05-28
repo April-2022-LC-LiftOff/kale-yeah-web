@@ -1,15 +1,19 @@
 import { React, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SearchBar.css';
 
-const SearchBar = ({ placeholder, data}) => {
+const SearchBar = () => {
   
-  const [state, setState] = useState(true);
-  // need to tie state to the data set that's being searched
-  // {state ? ingredientData : recipeData}
-  // must import data sets here then?
-  // perhaps need a prop then that triggers setState
-  // This will also need an onSubmit handler that takes you
-  // to a search results page.
+  const [ingredient, setIngredient] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/ingredient?name=${ingredient}`)
+}
+
+// we'll need to refactor above to link to recipe page when
+// the time comes. I presume a simple if, then in handleSubmit()
 
   const [ingredientsChecked, setIngredientsChecked] = useState(false);
   const [recipesChecked, setRecipesChecked] = useState(false);
@@ -24,61 +28,22 @@ const SearchBar = ({ placeholder, data}) => {
         if (ingredientsChecked === true) {
             setIngredientsChecked(false);
         }
-  };  
-
-
-  const [filteredData, setFilteredData] = useState([]);
-  //this will be used to show dropdown of results
-
-  const [wordEntered, setWordEntered] = useState("");
-  // this is used to change the search icon to a close icon
-
-  const handleFilter = (e) => {
-      const searchWord = e.target.value;
-      const newFilter = data.filter((value) => {
-          return value.title.toLowerCase().includes(searchWord.toLowerCase());
-      });
-      if (searchWord === "") {
-          setFilteredData([])
-      } else {
-        setFilteredData(newFilter)
-      }
-  }
-
-  const clearInput = () => {
-      setFilteredData([]);
-      setWordEntered("");
-  }
-
-
-
+  };
 
     return (
     <div className='search'>
-        <div className='search-inputs'>
-            <input 
+        
+        <div className='search-box'>
+        <form onSubmit={handleSubmit}>
+        <input 
               className='search-box'
               type="text" 
-              placeholder={placeholder} 
-              value={wordEntered}
-              onChange={handleFilter}/>
-            {/* <div className='searchIcon'>
-
-            </div> */}
+              placeholder="search"
+              value={ingredient}
+              onChange={(e) => setIngredient(e.target.value)}
+              />
+        </form>
         </div>
-        
-        {filteredData.length != 0 && (
-        <div className='dataResult'>
-            {filteredData.slice(0, 15).map((value, key) => {
-                return (
-                    <a className='dataItem' href={value.link} target="_blank">
-                        <p>{value.title}</p>
-                    </a>
-                );
-            })
-          })
-        </div>
-        )}
         
         <div className='checkboxes' id='checkboxes'>
             <label className='check-input'>
@@ -99,11 +64,7 @@ const SearchBar = ({ placeholder, data}) => {
             </label>
         </div>
         
-        
-        
     </div>
-    
-    
   );
 }
 
