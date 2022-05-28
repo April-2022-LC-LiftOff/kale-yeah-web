@@ -1,0 +1,40 @@
+.create-list h1 {
+    font-size: 80px;
+    margin-top: 35px;
+    margin-left: 10px;
+    color: black;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+
+.items {
+    margin-left: 10px;
+}
+
+.list-inputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+    margin-left: 10px
+}
+
+.list-inputs input {
+    height: 30px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.date input {
+    margin-left: 25px;
+}

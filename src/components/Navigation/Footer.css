@@ -1,13 +1,17 @@
 .footer {
-    background-color: #3eb489;
-    text-align: center;
-    margin-top: 15px;
-    padding-bottom: 15px;
-    padding-top: 10px;
-    border: 1px solid black;
-    max-width: 1024px;
-    font-family: 'Gadugi', sans-serif;
-    display: flex;
-    justify-content: space-around;
-  }
+  background-color: #3eb489;
+  text-align: center;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  /* padding-top: 10px; */
+  border: 1px solid black;
+  max-width: 1024px;
+  font-family: 'Gadugi', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+}
 
+.footer p {
+margin-top: 10px;
+}

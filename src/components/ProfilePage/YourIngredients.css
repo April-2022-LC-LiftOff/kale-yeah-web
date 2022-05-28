@@ -1,0 +1,21 @@
+h2 {
+    margin-left: 20px;
+}
+
+.pantry-images {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1024px;
+}
+
+.pantry-image {
+    flex-basis: 45%;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.pantry-images p {
+    text-align: center;
+    margin-top: -5px;
+}
