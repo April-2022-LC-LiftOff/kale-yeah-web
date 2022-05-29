@@ -11,15 +11,14 @@ const IngredientPage = () => {
   const search = useLocation().search;
   const ingredient = new URLSearchParams(search).get('name');
   const [data, setData] = useState([]);
-
   const fetchNameUrl = (name) => `http://localhost:8080/ingredients/${name}`;
-  // const data = axios.get(fetchNameUrl(ingredient)).then(response => response.data);
+  const itemNames = [];
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(fetchNameUrl(ingredient));
-        setData(response.data)
+        setData(response.data.results)
       } catch (error) {
         
       }
@@ -27,11 +26,10 @@ const IngredientPage = () => {
     fetchData();
   }, [])
   
-  
-
-
-  // const data = response.then(response => response.data);
-  console.log(data.results);
+  data.map((item) => {
+    itemNames.push(item.name.charAt(0).toUpperCase() + item.name.slice(1));
+  })
+  console.log(itemNames)
   
   // if (response.data.results.length === 0) {
   //   return (

@@ -3,10 +3,10 @@ import IngredientButton from './IngredientButton';
 import './IngredientComponent.css'
 const Pizza = require('./pizza.jpg');
 
-const IngredientComponent = (name, image, price) => {
+const IngredientComponent = (props) => {
   return (
     <div className='ingredient-component'>
-      <h2>Pizza</h2>
+      <h2>{props.name}</h2>
       <img className="ingredient-img" src={Pizza} alt="pizza"></img>
       <p>Price: $9.99</p>
       <p>Calories: 2500</p>
