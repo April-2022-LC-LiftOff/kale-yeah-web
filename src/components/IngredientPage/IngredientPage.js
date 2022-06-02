@@ -12,60 +12,55 @@ const IngredientPage = () => {
   const ingredient = new URLSearchParams(search).get('name');
   const [data, setData] = useState([]);
   const fetchNameUrl = (name) => `http://localhost:8080/ingredients/${name}`;
-  const itemNames = [];
+  const components= [];
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(fetchNameUrl(ingredient));
-        setData(response.data.results)
-      } catch (error) {
-        
-      }
-    }
-    fetchData();
-  }, [])
+      const fetchData = async () => {
+        const result = await axios.get(fetchNameUrl(ingredient),);
+        setData(result.data.results);
+      };
+      fetchData(); 
+  }, []);
   
-  data.map((item) => {
-    itemNames.push(item.name.charAt(0).toUpperCase() + item.name.slice(1));
-  })
-  console.log(itemNames)
-  
-  // if (response.data.results.length === 0) {
-  //   return (
-  //     <div className='ingredient-page'>
-  //     <Header />
-  //     <h1>Results: {ingredient}</h1>
-  //     <h2>No Results Found. Search Again</h2>
-  //     <Footer />
-  //     </div>
-  //   )
-  // }
 
-  return (
+  const renderComponents = () => {
+    let key = 1;
+    data.map((item) => {
+      const name = item.name.charAt(0).toUpperCase() + item.name.slice(1);
+      const renderComponent = () => {
+        return (
+          <IngredientComponent key={key} name={name} />
+        )
+      }
+      components.push(renderComponent());
+      key = key + 1;
+    })
+  }
+
+  renderComponents();
+
+  
+  if (data.length === 0) {
+    return (
+      <div className='ingredient-page'>
+      <Header />
+      <h1>Results: </h1>
+      <h2>No Results Found. Search Again</h2>
+      <Footer />
+      </div>
+    )
+  } else return (
     <div className='ingredient-page'>
       <Header />
       <h1>Results: {ingredient}</h1>
 
       <div className='results-container'>
           
-          
-          
-          
-          
-          
-          
-          <div className='results-box'>
-          <IngredientComponent />
-          </div>
-
-          <div className='results-box'>
-          <IngredientComponent />
-          </div>
-
-          <div className='results-box'>
-          <IngredientComponent />
-          </div>
+         {components.map((comp) => {
+           return (
+             <div key={comp.key} className='results-box'>{comp}</div>
+           )
+         })}
         
       </div>
       <Footer />
