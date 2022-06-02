@@ -38,7 +38,7 @@ const SearchBar = () => {
         <input 
               className='search-box'
               type="text" 
-              placeholder="search"
+              placeholder="Search"
               value={ingredient}
               onChange={(e) => setIngredient(e.target.value)}
               />

@@ -1,15 +1,15 @@
 import React from 'react';
 import IngredientButton from './IngredientButton';
 import './IngredientComponent.css'
-const Pizza = require('./pizza.jpg');
+const Image = require('./placeholder-img.png');
 
-const IngredientComponent = (name, image, price) => {
+const IngredientComponent = (props) => {
   return (
     <div className='ingredient-component'>
-      <h2>Pizza</h2>
-      <img className="ingredient-img" src={Pizza} alt="pizza"></img>
-      <p>Price: $9.99</p>
-      <p>Calories: 2500</p>
+      <h2>{props.name}</h2>
+      <img className="ingredient-img" src={Image} alt={props.name}></img>
+      <p>(props.price)</p>
+      <p>(props.calories)</p>
       
       <IngredientButton type="Add to Grocery List" />
       <IngredientButton type="Add to Pantry" />

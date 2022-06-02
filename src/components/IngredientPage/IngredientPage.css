@@ -9,13 +9,19 @@
 
     .results-container {
         display: flex;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: space-between;
         max-width: 1024px;
         margin-top: -20px;
+        flex-wrap: wrap;
     }
 
     .results-box {
         flex-basis: 32%;
+        max-width: 328px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        flex-grow: 1;
       }
 
 }
