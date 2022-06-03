@@ -9,7 +9,8 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/ingredient?name=${ingredient}`)
+    navigate(`/ingredient?name=${ingredient}`);
+    window.location.reload(false);
 }
 
 // we'll need to refactor above to link to recipe page when
