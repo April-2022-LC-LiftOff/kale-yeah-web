@@ -36,8 +36,9 @@ const Login = () => {
         }
         catch (error) {
             if (error) {
-                setLogUsername("")
-                setLogPwd("")
+                setEmail("")
+                setRegUsername("")
+                setRegPwd("")
         }
         console.log(error)
     }
