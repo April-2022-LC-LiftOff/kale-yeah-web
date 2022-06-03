@@ -12,7 +12,7 @@ const IngredientPage = () => {
   const ingredient = new URLSearchParams(search).get('name');
   const [data, setData] = useState([]);
   const fetchNameUrl = (name) => `http://localhost:8080/ingredients/${name}`;
-  const components= [];
+  const components = [];
 
   useEffect(() => {
       const fetchData = async () => {
@@ -38,34 +38,33 @@ const IngredientPage = () => {
   }
 
   renderComponents();
-
   
-  if (data.length === 0) {
+  if (data.length > 0) {
     return (
       <div className='ingredient-page'>
-      <Header />
-      <h1>Results: </h1>
-      <h2>No Results Found. Search Again</h2>
-      <Footer />
-      </div>
-    )
-  } else return (
-    <div className='ingredient-page'>
       <Header />
       <h1>Results: {ingredient}</h1>
 
       <div className='results-container'>
-          
+
          {components.map((comp) => {
            return (
              <div key={comp.key} className='results-box'>{comp}</div>
            )
          })}
-        
+
       </div>
       <Footer />
     </div>
-  )
+    )
+  } else return (
+    <div className='ingredient-page'>
+      <Header />
+      <h1>Results: </h1>
+      <h2>No Results Found. Search Again</h2>
+      <Footer />
+      </div>
+  )  
 }
 
 export default IngredientPage
