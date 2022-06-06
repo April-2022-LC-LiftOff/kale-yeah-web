@@ -1,20 +1,19 @@
 import './Login.css'
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-
+import { Context } from '../../Context';
 
 const Login = () => {
 
     const [registration, setRegistration] = useState("true");
 
     const [email, setEmail] = useState("");
+    const {regUsername, setRegUsername} = useContext(Context);
     const [regPwd, setRegPwd] = useState("");
-    const [regUsername, setRegUsername] = useState("");
 
     const [logUsername, setLogUsername] = useState("");
     const [logPwd, setLogPwd] = useState("");
-    const [errorMessage, setErrorMessage] = useState("")
 
     const redirect = useNavigate();
 
@@ -31,7 +30,8 @@ const Login = () => {
                 { headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' },
                              })
             if (response.status === 200) {
-                redirect("/profile")
+                window.localStorage.setItem('Username', regUsername);
+                redirect(`/profile/`)
             } 
         }
         catch (error) {
@@ -56,7 +56,7 @@ const Login = () => {
                 { headers: { 'content-type': 'application/json', 'Access-Control-Allow-Origin' : '*' } })
             console.log(response)
             if (response.status === 200) {
-                redirect("/profile")
+                redirect(`/profile/${logUsername}`)
             }    
 
         }
@@ -68,7 +68,6 @@ const Login = () => {
             console.log(error)
         }
     }
-    
 
     const registerForm = (
         <form onSubmit={handleRegSubmit} id="Regform">
@@ -127,6 +126,8 @@ const Login = () => {
             </button>
             <a href="#">Forgot password?</a>
         </form>
+
+       
     );
 
     return (
