@@ -39,7 +39,12 @@ React frontend is now running and go to a browser and type in the URL localhost:
 React, Spring Boot, MySQL, Axios, JSX
 
 ### Prerequisites
-Global dependencies for React: Axios , React DOM for routing 
+Global dependencies for React: <br/>
+
+React Error boundary should be installed on your local machine:
+```shell 
+   npm install --save react-error-boundary
+```
 
 Global Dependencies for Spring Boot:
 
