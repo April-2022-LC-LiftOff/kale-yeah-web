@@ -12,7 +12,7 @@ const IngredientComponent = (props) => {
       <p>(props.calories)</p>
       
       <IngredientButton type="Add to Grocery List" />
-      <IngredientButton type="Add to Pantry" />
+      {/* <IngredientButton type="Add to Pantry" /> */}
 
     </div>
   )
