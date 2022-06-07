@@ -38,3 +38,43 @@
 .date input {
     margin-left: 25px;
 }
+
+.list-items {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px
+}
+
+.list-btns {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.list-btns button {
+    background-color: #3eb489;
+    border: 1px solid #3eb489;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+}
+
+.ingredient-search {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.ingredient-search form {
+    width: 400px
+}
+
+.create-list h2 {
+    margin-top: 35px;
+}

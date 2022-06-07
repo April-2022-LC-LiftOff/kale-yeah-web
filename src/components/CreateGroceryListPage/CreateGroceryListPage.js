@@ -2,9 +2,8 @@ import { React, useState, useEffect } from 'react'
 import axios from 'axios'
 import Header from '../HeaderBar/Header'
 import Footer from '../Navigation/Footer'
-const Image = require('../IngredientPage/placeholder-img.png')
-
 import './CreateGroceryListPage.css'
+const Image = require('../IngredientPage/placeholder-img.png')
 
 const CreateGroceryListPage = () => {
   const [ingredient, setIngredient] = useState("");
