@@ -1,6 +1,6 @@
 import './ProfileImage.css'
 import React, {useContext } from "react";
-const Sheila = require('../../images/sheila.jpg')
+const Cabbage = require('../../images/cabbagehead.png')
 import { Context } from '../../Context';
 
 const ProfileImage = (props) => {
@@ -10,7 +10,7 @@ const ProfileImage = (props) => {
   return (
     <div className='profile-container'>
         <p><a href={`/profile/${regUsername}`}>{regUsername}</a></p>
-        <img src={Sheila} className='profile-image' alt='This is a profile picture' />
+        <img src={Cabbage} className='profile-image' alt='This is a profile picture' />
 
         {/* both these need to link back to profile page */}
     </div>

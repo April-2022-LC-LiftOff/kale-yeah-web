@@ -41,8 +41,10 @@
 
 .list-items {
     display: flex;
-    flex-direction: column;
-    margin-left: 10px
+    flex-direction: row;
+    margin-left: 10px;
+    flex-wrap: wrap;
+    max-width: 1024px;
 }
 
 .list-btns {
@@ -115,4 +117,18 @@
 #ing-btn button:hover {
     box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
     transform: translateY(-2px);
+}
+
+.items {
+    margin-left: 20px;
+}
+
+.item-checks {
+    margin-left: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.item-checks input {
+    margin-right: 5px
 }

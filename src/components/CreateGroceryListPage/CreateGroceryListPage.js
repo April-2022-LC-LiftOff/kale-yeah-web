@@ -13,12 +13,12 @@ const CreateGroceryListPage = () => {
   const [items, setItems] = useState([]);
 
     const renderComponents = () => {
-      let key = 1;
       data.map((item) => {
         const name = item.name.charAt(0).toUpperCase() + item.name.slice(1);
+        const id = item.id
         const renderComponent = () => {
           return (
-            <div key={key} className='ingredient-component'>
+            <div key={id} className='ingredient-component'>
               <h2>{name}</h2>
               <img className="ingredient-img" src={Image} alt={name}></img>
               <p>Price: ${Math.floor(Math.random()*10)}.{Math.floor(Math.random()*10)}{Math.floor(Math.random()*10)}</p>
@@ -26,7 +26,10 @@ const CreateGroceryListPage = () => {
       
               <div id='ing-btn'>
                 <button 
-                onClick={addItem({name})}
+                onClick={() => {
+                  const newItem = {name: `${name}`, key: `${id}`};
+                  setItems([...items, newItem])
+                }}
                 value={name}>
                 Add to List
                 </button>
@@ -35,12 +38,7 @@ const CreateGroceryListPage = () => {
           )
         }
         components.push(renderComponent());
-        key = key + 1;
       })
-    }
-
-    const addItem = (item) => {
-      setItems(items => [...items, item])
     }
 
     const handleSubmit = async (e) => {
@@ -51,7 +49,6 @@ const CreateGroceryListPage = () => {
     };
 
     renderComponents();
-    console.log(items);
   
   
   return (
@@ -73,22 +70,18 @@ const CreateGroceryListPage = () => {
           </div>
       </div>
 
+      <div className='items'><p>Items:</p></div>
       <div className='list-items'>
 
-        <div className='items'><p>Items:</p></div>
-
-        {/* {(() => {
-          if (items > 0) {
-            items.map((item) => {
-              return <label className='item-checks'>
-              <input 
-              type='checkbox'
-               />
-              {item}
+        {items.map((item) => {
+          return <label key={item.key} className='item-checks'>
+          <input 
+          type='checkbox'
+           />
+          {item.name}
           </label>
-            })
-          }
-        })} */}
+        })}
+      </div>
 
         <div className='list-btns'>
 
@@ -105,7 +98,7 @@ const CreateGroceryListPage = () => {
             </div>
 
         </div>
-      </div>
+      
 
 
       <h2 className='h2'>Search For Ingredients:</h2>
