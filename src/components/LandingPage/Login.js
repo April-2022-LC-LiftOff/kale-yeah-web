@@ -1,5 +1,5 @@
 import './Login.css'
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { Context } from '../../Context';
@@ -31,7 +31,7 @@ const Login = () => {
                              })
             if (response.status === 200) {
                 window.localStorage.setItem('Username', regUsername);
-                redirect(`/profile/`)
+                redirect(`/profile/${regUsername}`)
             } 
         }
         catch (error) {

@@ -5,6 +5,8 @@ export const Context = React.createContext();
 
 export const ContextProvider = ({ children }) => {
     const [regUsername, setRegUsername] = useState("");
+    const [name, setName] = useState("");
+    const [date, setDate] = useState("");
 
     useEffect(() => {
         setRegUsername((window.localStorage.getItem('Username')));
@@ -21,7 +23,7 @@ export const ContextProvider = ({ children }) => {
     }
     
      return (
-        <Context.Provider value={{ regUsername, setRegUsername }}>
+        <Context.Provider value={{ regUsername, setRegUsername, name, setName, date, setDate }}>
             {children}
         </Context.Provider>
     );

@@ -4,14 +4,19 @@ import IngredientPage from './components/IngredientPage/IngredientPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import CreateGroceryListPage from './components/CreateGroceryListPage/CreateGroceryListPage';
 import ViewGroceryListPage from './components/ViewGroceryListPage/ViewGroceryListPage';
+import React, { useContext } from "react";
+import {Context} from './Context'
 
 function App() {
+
+  const {regUsername} = useContext(Context);
+
   return (
     <div>
       <Routes>
         <Route path='/' element={<LandingPage />} exact/>
         <Route path='/ingredient' element={<IngredientPage />} exact/>
-        <Route path='/profile' element={<ProfilePage />} exact/>
+        <Route path= {`profile/${regUsername}`} element={<ProfilePage />} />
         <Route path='/create-list' element={<CreateGroceryListPage />} exact/>
         <Route path='/view-list' element={<ViewGroceryListPage />} exact/>
       </Routes>
