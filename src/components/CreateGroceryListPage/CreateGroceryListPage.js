@@ -74,19 +74,11 @@ const CreateGroceryListPage = () => {
         setData(result.data.results);
     };
 
-  renderComponents();
-  const {name, setName} = useContext(Context)
-  const {date, setDate} = useContext(Context)
-  const redirect = useNavigate();
+    renderComponents();
+    const {name, setName} = useContext(Context)
+    const {date, setDate} = useContext(Context)
+    const redirect = useNavigate();
 
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-      const result = await axios.get(`http://localhost:8080/ingredients/${ingredient}`,
-         {headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' }});
-      setData(result.data.results);
-    };
-    console.log(data)
 
     const handleRedirect = () => {
       redirect("/view-list")
