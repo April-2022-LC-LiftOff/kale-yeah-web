@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useContext } from "react";
 import Header from '../HeaderBar/Header'
 import Footer from '../Navigation/Footer'
 import YourLists from '../ProfilePage/YourLists'
 import './ViewGroceryListPage.css'
+import { Context } from '../../Context'
 
 const ViewGroceryListPage = () => {
+  const {name} = useContext(Context)
+  const {date} = useContext(Context)
+
   return (
     <div className='view-list'>
     <Header />
@@ -15,11 +19,11 @@ const ViewGroceryListPage = () => {
       <div className='container-left'>
         <div className='list-inputs'>
           <div className='name'>
-            <p>Name: Grocery List Name Here</p>
+            <p>Name: {name}</p>
           </div>
 
           <div className='date'>
-            <p>Date: 06-02-22</p>
+            <p>Date: {date}</p>
           </div>
 
           <div className='items'><p>Items:</p></div>
