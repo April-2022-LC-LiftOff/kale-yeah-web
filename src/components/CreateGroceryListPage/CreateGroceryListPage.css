@@ -54,7 +54,7 @@
     margin-left: 10px;
 }
 
-.list-btns button {
+.save button {
     background-color: #3eb489;
     border: 1px solid #3eb489;
     border-radius: 4px;
@@ -64,6 +64,28 @@
     cursor: pointer;
     font-size: 16px;
     width: 200px;
+}
+
+.delete button {
+    background-color: #952e1a;
+    border: 1px solid #952e1a;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+}
+
+#save button:hover {
+    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+    transform: translateY(-2px);
+}
+
+#delete button:hover {
+    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+    transform: translateY(-2px);
 }
 
 .ingredient-search {

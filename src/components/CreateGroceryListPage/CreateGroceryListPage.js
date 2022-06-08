@@ -11,6 +11,7 @@ const CreateGroceryListPage = () => {
   const [data, setData] = useState([]);
   const components = [];
   const [items, setItems] = useState([]);
+  const [toBeDeleted, setToBeDeleted] = useState([]);
 
     const renderComponents = () => {
       data.map((item) => {
@@ -39,6 +40,31 @@ const CreateGroceryListPage = () => {
         }
         components.push(renderComponent());
       })
+    }
+
+    const handleCheck = (key) => {
+        if (!toBeDeleted.includes(key)){
+          setToBeDeleted([...toBeDeleted, key])
+        } else {
+          const tempArray = [];
+          toBeDeleted.map((i) => {
+            if (i != key){
+              tempArray.push(i)
+            } return tempArray
+          })
+          setToBeDeleted(tempArray);
+        }
+    }
+
+    const deleteItems = () => {
+      const tempArray = [];
+      items.map((i) => {
+        if (!toBeDeleted.includes(i.key)){
+          tempArray.push(i);
+        }
+      });
+      setItems(tempArray);
+      setToBeDeleted([]);
     }
 
     const handleSubmit = async (e) => {
@@ -71,12 +97,13 @@ const CreateGroceryListPage = () => {
       </div>
 
       <div className='items'><p>Items:</p></div>
+      
       <div className='list-items'>
-
         {items.map((item) => {
           return <label key={item.key} className='item-checks'>
           <input 
           type='checkbox'
+          onChange={() => {handleCheck(item.key)}}
            />
           {item.name}
           </label>
@@ -84,19 +111,17 @@ const CreateGroceryListPage = () => {
       </div>
 
         <div className='list-btns'>
-
-          <div id='delete'>
-            <button>
-               Delete Items
-            </button>
-            </div>
-
-            <div id='save'>
+          <div className='save' id='save'>
             <button>
                Save List
             </button>
             </div>
 
+            <div className='delete' id='delete'>
+            <button onClick={deleteItems}>
+               Delete Items
+            </button>
+            </div>
         </div>
       
 
@@ -119,15 +144,8 @@ const CreateGroceryListPage = () => {
               return (
                 <div key={comp.key} className='ing-results'>{comp}</div>
               )
-            })}
-     
+            })}    
         </div>
-          
-          
-          
-      
-
-
     <Footer />
     </div>
   )
