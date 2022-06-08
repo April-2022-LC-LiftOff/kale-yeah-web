@@ -1,23 +1,57 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState } from 'react'
 import axios from 'axios'
 import Header from '../HeaderBar/Header'
 import Footer from '../Navigation/Footer'
 import './CreateGroceryListPage.css'
 const Image = require('../IngredientPage/placeholder-img.png')
 
+
 const CreateGroceryListPage = () => {
   const [ingredient, setIngredient] = useState("");
   const [data, setData] = useState([]);
-  const fetchNameUrl = (name) => `http://localhost:8080/ingredients/${name}`;
+  const components = [];
+  const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get(fetchNameUrl(ingredient));
-      setData(result.data.results);
-    };
-    fetchData(); 
-}, []);
+    const renderComponents = () => {
+      let key = 1;
+      data.map((item) => {
+        const name = item.name.charAt(0).toUpperCase() + item.name.slice(1);
+        const renderComponent = () => {
+          return (
+            <div key={key} className='ingredient-component'>
+              <h2>{name}</h2>
+              <img className="ingredient-img" src={Image} alt={name}></img>
+              <p>Price: ${Math.floor(Math.random()*10)}.{Math.floor(Math.random()*10)}{Math.floor(Math.random()*10)}</p>
+              <p>Calories: {Math.floor(Math.random()*500)}</p>
       
+              <div id='ing-btn'>
+                <button 
+                onClick={addItem({name})}
+                value={name}>
+                Add to List
+                </button>
+              </div>
+            </div>          
+          )
+        }
+        components.push(renderComponent());
+        key = key + 1;
+      })
+    }
+
+    const addItem = (item) => {
+      setItems(items => [...items, item])
+    }
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+        const result = await axios.get(`http://localhost:8080/ingredients/${ingredient}`,
+           {headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' }});
+        setData(result.data.results);
+    };
+
+    renderComponents();
+    console.log(items);
   
   
   return (
@@ -43,9 +77,18 @@ const CreateGroceryListPage = () => {
 
         <div className='items'><p>Items:</p></div>
 
-        {/* need a for each loop here that dynamically displays
-        what items are currently in the Grocery List
-        Should be checkboxes that allow for deletion */}
+        {/* {(() => {
+          if (items > 0) {
+            items.map((item) => {
+              return <label className='item-checks'>
+              <input 
+              type='checkbox'
+               />
+              {item}
+          </label>
+            })
+          }
+        })} */}
 
         <div className='list-btns'>
 
@@ -65,9 +108,9 @@ const CreateGroceryListPage = () => {
       </div>
 
 
-      <h2>Search For Ingredients:</h2>
+      <h2 className='h2'>Search For Ingredients:</h2>
       <div className='ingredient-search'>
-        <form onSubmit={console.log(data)}>
+        <form onSubmit={handleSubmit}>
         <input 
               className='ing-search-box'
               type="text" 
@@ -79,24 +122,12 @@ const CreateGroceryListPage = () => {
         </div>
 
         <div className='ing-search-results'>
-          {data != 0 ? () => {
-            return data.map((item) => {
-              return <div className='ing-component'>
-              <h2>{item.name}</h2>
-              <img className="ing-img" src={Image} alt={item.name}></img>
-              <p>Price: $9.99</p>
-              <p>Calories: 2500</p>
-              
-              <div id='save'>
-                <button>
-                 Add To List
-                </button>
-              </div>
-        
-            </div>
-            })
-
-          } : null}
+            {components.map((comp) => {
+              return (
+                <div key={comp.key} className='ing-results'>{comp}</div>
+              )
+            })}
+     
         </div>
           
           

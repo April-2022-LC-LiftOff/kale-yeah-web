@@ -8,8 +8,8 @@ const IngredientComponent = (props) => {
     <div className='ingredient-component'>
       <h2>{props.name}</h2>
       <img className="ingredient-img" src={Image} alt={props.name}></img>
-      <p>(props.price)</p>
-      <p>(props.calories)</p>
+      <p>Price: ${Math.floor(Math.random()*10)}.{Math.floor(Math.random()*100)}</p>
+      <p>Calories: {Math.floor(Math.random()*500)}</p>
       
       <IngredientButton type="Add to Grocery List" />
       {/* <IngredientButton type="Add to Pantry" /> */}
