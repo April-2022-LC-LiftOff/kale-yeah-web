@@ -3,8 +3,8 @@ import axios from 'axios'
 import Header from '../HeaderBar/Header'
 import Footer from '../Navigation/Footer'
 import './CreateGroceryListPage.css'
+import { Context } from '../../Context'
 const Image = require('../IngredientPage/placeholder-img.png')
-
 
 const CreateGroceryListPage = () => {
   const [ingredient, setIngredient] = useState("");
@@ -74,8 +74,32 @@ const CreateGroceryListPage = () => {
         setData(result.data.results);
     };
 
-    renderComponents();
-  
+  renderComponents();
+  const {name, setName} = useContext(Context)
+  const {date, setDate} = useContext(Context)
+  const redirect = useNavigate();
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+      const result = await axios.get(`http://localhost:8080/ingredients/${ingredient}`,
+         {headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' }});
+      setData(result.data.results);
+    };
+    console.log(data)
+
+    const handleRedirect = () => {
+      redirect("/view-list")
+    }
+     console.log(name)
+
+     const handleNameSubmit = () => {
+       return name
+     }
+
+     const handleDateSubmit = () => {
+      return date
+    }
   
   return (
     <div className='create-list'>
@@ -83,17 +107,25 @@ const CreateGroceryListPage = () => {
       <h1>Create Grocery List</h1>
 
       <div className='list-inputs'>
+        <form onSubmit={handleNameSubmit}>
           <div className='name'>
             <p>Name:</p>
-            <input 
+            <input
+            value={name} 
+            onChange={(e) => setName(e.target.value)}
             type='text'/>
           </div>
+        </form>
 
+        <form onSubmit={handleDateSubmit}>
           <div className='date'>
             <p>Date:</p>
             <input 
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
             type='text'/>
           </div>
+        </form>
       </div>
 
       <div className='items'><p>Items:</p></div>
@@ -110,23 +142,22 @@ const CreateGroceryListPage = () => {
         })}
       </div>
 
-        <div className='list-btns'>
-          <div className='save' id='save'>
-            <button>
+      <div className='list-btns'>
+         <div className='save' id='save'>
+            <button onClick={handleRedirect}>
                Save List
             </button>
-            </div>
-
-            <div className='delete' id='delete'>
+         </div>
+            
+         <div className='delete' id='delete'>
             <button onClick={deleteItems}>
                Delete Items
             </button>
             </div>
-        </div>
-      
+      </div>
 
 
-      <h2 className='h2'>Search For Ingredients:</h2>
+      <h2>Search For Ingredients:</h2>
       <div className='ingredient-search'>
         <form onSubmit={handleSubmit}>
         <input 
@@ -145,7 +176,7 @@ const CreateGroceryListPage = () => {
                 <div key={comp.key} className='ing-results'>{comp}</div>
               )
             })}    
-        </div>
+        </div>        
     <Footer />
     </div>
   )
