@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../HeaderBar/Header'
 import IngredientComponent from './IngredientComponent'
 import Footer from '../Navigation/Footer'
@@ -13,6 +13,7 @@ const IngredientPage = () => {
   const [data, setData] = useState([]);
   const fetchNameUrl = (name) => `http://localhost:8080/ingredients/${name}`;
   const components = [];
+  // const navigate = useNavigate();
 
   useEffect(() => {
       const fetchData = async () => {
@@ -38,6 +39,12 @@ const IngredientPage = () => {
   }
 
   renderComponents();
+
+  // useEffect(() => {
+  //   if (navigate(1)){
+  //     window.location.reload(false);
+  //   }
+  // })
   
   if (data.length > 0) {
     return (
