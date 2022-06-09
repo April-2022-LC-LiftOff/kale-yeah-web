@@ -5,12 +5,12 @@ import * as BiIcons from 'react-icons/bi';
 import * as MdIconName  from "react-icons/md";
 
 export const SidebarData =  [
-    // {
-    //   title: 'Home',
-    //   path:  '/profile',
-    //   icon: <AiIcons.AiFillHome />,
-    //   cName: 'nav-text'
-    // },
+    {
+      title: 'Home',
+      path:  '/profile',
+      icon: <AiIcons.AiFillHome />,
+      cName: 'nav-text'
+    },
     {
         title: 'Ingredient',
         path:  '/ingredient',

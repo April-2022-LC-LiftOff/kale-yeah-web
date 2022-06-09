@@ -24,7 +24,7 @@ const Header = () => {
         <div className='header-box'>
         <ProfileImage user="aunt_sheila" />
         </div>
-        <NavbarElements />
+        {/* <NavbarElements /> */}
         
       </header>
     )

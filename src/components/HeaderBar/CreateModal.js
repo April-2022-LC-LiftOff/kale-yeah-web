@@ -34,9 +34,9 @@ function CreateModal({ closeModal }) {
     navigate('/create-list')
   }
 
-  function handleClickRecipe() {
-    navigate
-  }
+  // function handleClickRecipe() {
+  //   navigate
+  // }
 
   return (
     <div className='modal-container'>
@@ -54,7 +54,7 @@ function CreateModal({ closeModal }) {
             </button>
           </tr>
           <tr>
-            <button onClick={() => closeModal(false)}>
+            <button onClick={() => closeModal(false)} className='close-btn'>
               Close
             </button>
           </tr>
