@@ -1,6 +1,6 @@
 import './ProfileImage.css'
 import React, {useContext } from "react";
-const Sheila = require('../../images/sheila.jpg')
+const Cabbage = require('../../images/cabbagehead.png')
 import { Context } from '../../Context';
 import { useState } from 'react';
 

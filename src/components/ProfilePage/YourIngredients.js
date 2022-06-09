@@ -5,7 +5,7 @@ const Pantry = require('./pantry.jpg');
 
 const YourPantry = () => {
   return (
-    <div>
+    <div className='your-pantry'>
       <h2>Your Ingredients</h2>
 
       <div className='pantry-images'>
