@@ -23,7 +23,7 @@ const ProfileImage = (props) => {
     <div className='profile-container'>
       <p><a href={`/profile/${regUsername}`}>{regUsername}</a></p>
       <div onClick={showModalHandler}>
-        <img src={Sheila} className='profile-image' alt='This is a profile picture' />
+        <img src={Cabbage} className='profile-image' alt='This is a profile picture' />
       </div>
         {/* both these need to link back to profile page */}
         {showModal && <CreateModal2 closeModal = {setShowModal}/>}
