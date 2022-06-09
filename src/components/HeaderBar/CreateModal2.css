@@ -1,34 +1,26 @@
-.modal-container {
-
-    /* position: absolute;
-    top: 110px;
-    right: 400px;
-    width: 200px;
-    height: 270px;
-    border-radius: 12px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
+.modal{
+    /* display: flex;
     flex-direction: column;
-    padding: 25px; 
+    justify-content: space-evenly;
     align-items: center;
-    margin-right:-220px; */
+    width: 375px;
+    height: 100px; 
+    font-family: 'Gadugi', sans-serif;
+    border: 1px black solid;  */
 
     position: absolute;
-    top: 34%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 270px;
+    top: 110px;
+    right: 400px;
+    width: 190px;
+    height: 210px;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     padding: 25px; 
-    align-items: center;
-
-
+    align-items: left;
+    margin-right:-320px;
     
   }
 
@@ -42,8 +34,7 @@ button {
     margin: 5px;
 }
 
-
-.list-btn {
+.home-btn {
     background-color: #3eb489;
     border: 1px solid #3eb489;
     border-radius: 4px;
@@ -53,10 +44,9 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-right: 15px;
-
 }
 
-.recipe-btn {
+.logout-btn  {
     background-color: #3eb489;
     border: 1px solid #3eb489;
     border-radius: 4px;
@@ -66,18 +56,4 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-right: 15px;
-
-}
-
-.close-btn {
-    background-color: #3eb489;
-    border: 1px solid #3eb489;
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 15px;
-
 }
