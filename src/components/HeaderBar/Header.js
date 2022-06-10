@@ -2,6 +2,7 @@ import CreateButton from './CreateButton'
 import ProfileImage from './ProfileImage'
 import SearchBar from './SearchBar'
 import './Header.css';
+import NavbarElements from '../NavigationBar/NavbarElements';
 const Logo = require('../../images/logo.png')
 
 
@@ -23,8 +24,7 @@ const Header = () => {
         <div className='header-box'>
         <ProfileImage user="aunt_sheila" />
         </div>
-        
-        
+        {/* <NavbarElements /> */}
         
       </header>
     )

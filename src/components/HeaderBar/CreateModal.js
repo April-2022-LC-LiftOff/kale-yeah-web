@@ -2,40 +2,12 @@ import React from 'react';
 import './CreateModal.css';
 import { useNavigate } from 'react-router';
 
-// const CreateModal = (onClick, onClose) => {
-//   return (
-//     <div className='modal-container'>
-//         <p>What would you like to create?</p>
-//       <div className='buttons'>
-//         <button className='list-btn'>
-//           Grocery List
-//         </button>
-//         <button className='recipe-btn'>
-//           Recipe
-//         </button>
-//         <button onClick={onClose}>
-//           Close
-//         </button>
-//       </div>
-        
-    
-//       {/* onClick needs to take user to /create path */}
-    
-    
-//     </div>
-//   )
-// }
-
 function CreateModal({ closeModal }) {
 
   let navigate  = useNavigate();
 
   function handleClickGrocery() {
     navigate('/create-list')
-  }
-
-  function handleClickRecipe() {
-    navigate
   }
 
   return (
@@ -54,7 +26,7 @@ function CreateModal({ closeModal }) {
             </button>
           </tr>
           <tr>
-            <button onClick={() => closeModal(false)}>
+            <button onClick={() => closeModal(false)} className='close-btn'>
               Close
             </button>
           </tr>

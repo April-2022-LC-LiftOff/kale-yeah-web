@@ -1,11 +1,13 @@
-import { React, useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { React, useState } from 'react'
 import axios from 'axios'
 import Header from '../HeaderBar/Header'
 import Footer from '../Navigation/Footer'
 import './CreateGroceryListPage.css'
 import { Context } from '../../Context'
+import { useContext } from 'react'
+import { useNavigate } from 'react-router';
 const Image = require('../IngredientPage/placeholder-img.png')
+
 
 const CreateGroceryListPage = () => {
   const [ingredient, setIngredient] = useState("");
@@ -150,7 +152,7 @@ const CreateGroceryListPage = () => {
       </div>
 
 
-      <h2>Search For Ingredients:</h2>
+      <h2 className='h2'>Search For Ingredients:</h2>
       <div className='ingredient-search'>
         <form onSubmit={handleSubmit}>
         <input 

@@ -8,6 +8,7 @@
     height: 75px;
     border-radius: 50%;
     border: 3px solid #349600;
+    cursor: pointer;
 }
 
 img {
@@ -17,3 +18,4 @@ img {
 p {
     margin-top: 25px;
 }
+
