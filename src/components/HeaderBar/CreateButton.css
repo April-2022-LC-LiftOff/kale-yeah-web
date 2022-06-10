@@ -8,6 +8,7 @@
     cursor: pointer;
     font-size: 16px;
     margin-right: 15px;
+    width: 120px;
 }
 
 #create-btn button:hover {
@@ -25,6 +26,7 @@
     cursor: pointer;
     font-size: 16px;
     margin-right: 15px;
+    width: 120px;
 }
 
 #close-btn button:hover {

@@ -4,6 +4,7 @@ import './CreateModal2.css'
 import { Context } from '../../Context';
 import {useContext } from "react";
 import  * as  SiIconName from "react-icons/si";
+const Kale = require('../../images/kale-cut.png')
 
 
 function CreateModal2({ closeModal }) {
@@ -22,7 +23,8 @@ function CreateModal2({ closeModal }) {
   
     return (
       <div className='modal'>
-        <p id ='router-icon'> <SiIconName.SiReactrouter size={50}/></p>
+        <div className='kale-sm'><img src={Kale} alt="Kale" width='75px' height='100px'/></div>
+        {/* <p id ='router-icon'> <SiIconName.SiReactrouter size={50}/></p> */}
         <div className='buttons'>
           <table>
             <tbody>
@@ -37,9 +39,9 @@ function CreateModal2({ closeModal }) {
                 </button>
               </tr>
               <tr>
-                {/* <button onClick={() => closeModal(false)}>
+                <button className='close-btn2' onClick={() => closeModal(false)}>
                   Close
-                </button> */}
+                </button>
               </tr>
             </tbody>
           </table>

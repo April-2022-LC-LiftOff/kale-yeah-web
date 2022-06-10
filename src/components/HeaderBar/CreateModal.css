@@ -1,17 +1,17 @@
 .modal-container {
     position: absolute;
-    top: 25%;
+    top: 22%;
     left: 75%;
     transform: translate(-50%, -50%);
     width: 200px;
-    height: 250px;
+    height: 200px;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
-    padding-top: 25px;
-    /* padding: 25px;  */
+    justify-content: space-around;
+    padding-top: 15px;
     align-items: center;
 }
 
@@ -22,7 +22,7 @@
 .buttons {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;  
+    justify-content: space-evenly;
 }
 
 .list-btn {
@@ -35,7 +35,7 @@
     cursor: pointer;
     font-size: 16px;
     width: 150px;
-    margin-top: 15px;
+    margin-top: -5px;
 }
 
 .recipe-btn {

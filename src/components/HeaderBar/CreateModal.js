@@ -25,11 +25,11 @@ function CreateModal({ closeModal }) {
               Recipe
             </button>
           </tr>
-          <tr>
+          {/* <tr>
             <button onClick={() => closeModal(false)} className='close-btn'>
               Close
             </button>
-          </tr>
+          </tr> */}
         </tbody>
         
         
