@@ -9,7 +9,7 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/ingredient?name=${ingredient}`);
+    navigate(`/ingredientsearch?name=${ingredient}`);
     window.location.reload(false);
 }
 

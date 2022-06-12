@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../HeaderBar/Header'
 import IngredientComponent from './IngredientComponent'
 import Footer from '../Navigation/Footer'
-import './IngredientPage.css'
+import './IngredientSearchPage.css'
 
 const IngredientPage = () => {
   
