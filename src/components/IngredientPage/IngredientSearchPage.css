@@ -1,9 +1,13 @@
-.ingredient-page h1 {
+.ingredient-search-page h1 {
     font-size: 80px;
     margin-top: 35px;
     margin-left: 10px;
     color: black;
     max-width: 650px;
+}
+
+.ingredient-search-page h2 {
+    margin-left: 10px;
 }
 
 @media(min-width:768px) {

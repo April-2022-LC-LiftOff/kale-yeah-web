@@ -1,18 +1,27 @@
 import { React, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './SearchBar.css';
 
 const SearchBar = () => {
   
   const [ingredient, setIngredient] = useState("");
   const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate(`/ingredientsearch?name=${ingredient}`);
-    window.location.reload(false);
-}
+    const result = await axios.get(`http://localhost:8080/ingredients/${ingredient}`,
+        {headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' }});
+    if (result.data.results.length === 0) {
+        navigate('/ingredientsearch404', {state: {param: ingredient}});
+        window.location.reload(false);
+    } else {
+        navigate(`/ingredientsearch?name=${ingredient}`);
+        window.location.reload(false);
+    }
+  };
 
+  
 // we'll need to refactor above to link to recipe page when
 // the time comes. I presume a simple if, then in handleSubmit()
 

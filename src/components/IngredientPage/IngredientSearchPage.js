@@ -17,12 +17,12 @@ const IngredientPage = () => {
 
   useEffect(() => {
       const fetchData = async () => {
-        const result = await axios.get(fetchNameUrl(ingredient),);
+        const result = await axios.get(fetchNameUrl(ingredient));
         setData(result.data.results);
       };
       fetchData(); 
   }, []);
-  
+
 
   const renderComponents = () => {
     let key = 1;
@@ -46,9 +46,8 @@ const IngredientPage = () => {
   //   }
   // })
   
-  if (data.length > 0) {
     return (
-      <div className='ingredient-page'>
+      <div className='ingredient-search-page'>
       <Header />
       <h1>Results: {ingredient}</h1>
 
@@ -64,14 +63,7 @@ const IngredientPage = () => {
       <Footer />
     </div>
     )
-  } else return (
-    <div className='ingredient-page'>
-      <Header />
-      <h1>Results: </h1>
-      <h2>No Results Found. Search Again</h2>
-      <Footer />
-      </div>
-  )  
-}
+  }   
+
 
 export default IngredientPage
