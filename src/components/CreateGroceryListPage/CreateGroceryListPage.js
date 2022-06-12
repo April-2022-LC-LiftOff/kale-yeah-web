@@ -31,7 +31,7 @@ const CreateGroceryListPage = () => {
               <div id='ing-btn'>
                 <button 
                 onClick={() => {
-                  const newItem = {name: `${name}`, key: `${id}`};
+                  const newItem = {name: `${name}`, groceryId: `${id}`};
                   setItems([...items, newItem])
                 }}
                 value={name}>
@@ -62,7 +62,7 @@ const CreateGroceryListPage = () => {
     const deleteItems = () => {
       const tempArray = [];
       items.map((i) => {
-        if (!toBeDeleted.includes(i.key)){
+        if (!toBeDeleted.includes(i.groceryId)){
           tempArray.push(i);
         }
       });
@@ -82,11 +82,9 @@ const CreateGroceryListPage = () => {
     const {date, setDate} = useContext(Context)
     const redirect = useNavigate();
 
-
     const handleRedirect = () => {
       redirect("/view-list")
     }
-     console.log(name)
 
      const handleNameSubmit = () => {
        return name
@@ -127,10 +125,10 @@ const CreateGroceryListPage = () => {
       
       <div className='list-items'>
         {items.map((item) => {
-          return <label key={item.key} className='item-checks'>
+          return <label key={item.groceryId} className='item-checks'>
           <input 
           type='checkbox'
-          onChange={() => {handleCheck(item.key)}}
+          onChange={() => {handleCheck(item.groceryId)}}
            />
           {item.name}
           </label>

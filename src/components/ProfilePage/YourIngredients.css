@@ -2,6 +2,10 @@
     margin-left: 20px;
 }
 
+.your-pantry p {
+    margin-right: 10px;
+}
+
 .pantry-images {
     display: flex;
     justify-content: space-around;
