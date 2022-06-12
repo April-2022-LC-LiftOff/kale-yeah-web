@@ -9,7 +9,7 @@ function CreateModal({ closeModal }) {
   function handleClickGrocery() {
     navigate('/create-list')
   }
-
+  
   return (
     <div className='modal-container'>
       <p>What would you like to create?</p>
@@ -20,7 +20,7 @@ function CreateModal({ closeModal }) {
           
           <button className='recipe-btn'>
             Recipe
-          </button>        
+          </button>
       </div>
     </div>
 

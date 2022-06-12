@@ -8,7 +8,6 @@ import { useContext } from 'react'
 import { useNavigate } from 'react-router';
 const Image = require('../IngredientPage/placeholder-img.png')
 
-
 const CreateGroceryListPage = () => {
   const [ingredient, setIngredient] = useState("");
   const [data, setData] = useState([]);
