@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
-import IngredientPage from './components/IngredientPage/IngredientPage';
+import IngredientSearchPage from './components/IngredientPage/IngredientSearchPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import CreateGroceryListPage from './components/CreateGroceryListPage/CreateGroceryListPage';
 import ViewGroceryListPage from './components/ViewGroceryListPage/ViewGroceryListPage';
@@ -15,7 +15,7 @@ function App() {
     <div>
       <Routes>
         <Route path='/' element={<LandingPage />} exact/>
-        <Route path='/ingredient' element={<IngredientPage />} exact/>
+        <Route path='/ingredientsearch' element={<IngredientSearchPage />} exact/>
         <Route path= {`profile/${regUsername}`} element={<ProfilePage />} />
         <Route path='/create-list' element={<CreateGroceryListPage />} exact/>
         <Route path='/view-list' element={<ViewGroceryListPage />} exact/>

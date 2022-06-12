@@ -4,10 +4,9 @@ import Header from '../HeaderBar/Header'
 import Footer from '../Navigation/Footer'
 import './CreateGroceryListPage.css'
 import { Context } from '../../Context'
-const Image = require('../IngredientPage/placeholder-img.png')
-
 import { useContext } from 'react'
 import { useNavigate } from 'react-router';
+const Image = require('../IngredientPage/placeholder-img.png')
 
 const CreateGroceryListPage = () => {
   const [ingredient, setIngredient] = useState("");
@@ -31,7 +30,7 @@ const CreateGroceryListPage = () => {
               <div id='ing-btn'>
                 <button 
                 onClick={() => {
-                  const newItem = {name: `${name}`, key: `${id}`};
+                  const newItem = {name: `${name}`, groceryId: `${id}`};
                   setItems([...items, newItem])
                 }}
                 value={name}>
@@ -62,7 +61,7 @@ const CreateGroceryListPage = () => {
     const deleteItems = () => {
       const tempArray = [];
       items.map((i) => {
-        if (!toBeDeleted.includes(i.key)){
+        if (!toBeDeleted.includes(i.groceryId)){
           tempArray.push(i);
         }
       });
@@ -82,11 +81,9 @@ const CreateGroceryListPage = () => {
     const {date, setDate} = useContext(Context)
     const redirect = useNavigate();
 
-
     const handleRedirect = () => {
       redirect("/view-list")
     }
-     console.log(name)
 
      const handleNameSubmit = () => {
        return name
@@ -127,10 +124,10 @@ const CreateGroceryListPage = () => {
       
       <div className='list-items'>
         {items.map((item) => {
-          return <label key={item.key} className='item-checks'>
+          return <label key={item.groceryId} className='item-checks'>
           <input 
           type='checkbox'
-          onChange={() => {handleCheck(item.key)}}
+          onChange={() => {handleCheck(item.groceryId)}}
            />
           {item.name}
           </label>
@@ -152,7 +149,7 @@ const CreateGroceryListPage = () => {
       </div>
 
 
-      <h2>Search For Ingredients:</h2>
+      <h2 className='h2'>Search For Ingredients:</h2>
       <div className='ingredient-search'>
         <form onSubmit={handleSubmit}>
         <input 

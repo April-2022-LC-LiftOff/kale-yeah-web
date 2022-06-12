@@ -3,6 +3,7 @@
     margin-top: 35px;
     margin-left: 10px;
     color: black;
+    max-width: 650px;
 }
 
 .name {
@@ -64,6 +65,7 @@
     cursor: pointer;
     font-size: 16px;
     width: 200px;
+    margin-left: 10px;
 }
 
 .delete button {
@@ -76,6 +78,7 @@
     cursor: pointer;
     font-size: 16px;
     width: 200px;
+    margin-left: 10px;
 }
 
 #save button:hover {

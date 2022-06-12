@@ -1,11 +1,9 @@
 import './ProfileImage.css'
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 const Cabbage = require('../../images/cabbagehead.png')
 import { Context } from '../../Context';
 import { useState } from 'react';
-
-import CreateModal2 from './CreateModal2';
-
+import HomeModal from './HomeModal';
 
 const ProfileImage = (props) => {
 
@@ -26,7 +24,7 @@ const ProfileImage = (props) => {
         <img src={Cabbage} className='profile-image' alt='This is a profile picture' />
       </div>
         {/* both these need to link back to profile page */}
-        {showModal && <CreateModal2 closeModal = {setShowModal}/>}
+        {showModal && <HomeModal closeModal = {setShowModal}/>}
     </div>
   )
 }
