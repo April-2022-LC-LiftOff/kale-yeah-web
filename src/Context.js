@@ -26,9 +26,25 @@ export const ContextProvider = ({ children }) => {
         setName((window.localStorage.getItem('Name')));
     }, []);
 
+    try {
+        const result = window.localStorage.getItem('Name');
+        console.log(result);
+    } catch (err) {
+
+        console.log('error', err);
+    }
+
     useEffect(() => {
         setDate((window.localStorage.getItem('Date')));
     }, []);
+
+    try {
+        const result = window.localStorage.getItem('Date');
+        console.log(result);
+    } catch (err) {
+
+        console.log('error', err);
+    }
 
 
     
