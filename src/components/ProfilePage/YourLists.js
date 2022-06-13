@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Context } from '../../Context'
 import './YourLists.css'
 
 const YourLists = () => {
   const navigate = useNavigate();
+  const {name} = useContext(Context)
 
   return (
     <div>
@@ -16,6 +18,9 @@ const YourLists = () => {
           <a onClick={() => {
           navigate(`../list/fresh-thyme`, {state: {name: "Fresh Thyme for mangoes", date:'06-12-22', item1: 'Mango', item2: 'Coconut milk', item3: 'Ketchup', item4: 'Cake Pops', item5: 'Coffee'}});
         }}><li>Fresh Thyme for mangoes</li></a>
+
+          <li><a href = {`/view-list/${name}`}>{name}</a></li>
+          {window.localStorage.clear}
       </ul>
 
     </div>

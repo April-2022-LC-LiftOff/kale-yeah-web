@@ -82,7 +82,7 @@ const CreateGroceryListPage = () => {
     const redirect = useNavigate();
 
     const handleRedirect = () => {
-      redirect("/view-list")
+      redirect(`/view-list/${name}`)
     }
 
      const handleNameSubmit = () => {

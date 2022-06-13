@@ -8,6 +8,9 @@ function CreateModal({ closeModal }) {
 
   function handleClickGrocery() {
     navigate('/create-list')
+    window.location.reload(false);
+    localStorage.removeItem('Name')
+    localStorage.removeItem('Date')
   }
   
   return (

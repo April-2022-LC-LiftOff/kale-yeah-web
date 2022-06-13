@@ -2,8 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RecipeComponent.css'
 
-const RecipeComponent = (props) => {
-  const navigate = useNavigate();
+const RecipeComponent = (props) => { 
 
   return (
     <div className='recipe-component'>

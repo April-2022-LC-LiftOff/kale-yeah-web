@@ -1,4 +1,4 @@
-import React, {useContext } from "react";
+import React, {useContext} from "react";
 import Header from '../HeaderBar/Header'
 import Footer from '../Navigation/Footer'
 import YourLists from '../ProfilePage/YourLists'
@@ -6,9 +6,13 @@ import './ViewGroceryListPage.css'
 import { Context } from '../../Context'
 
 const ViewGroceryListPage = () => {
+
   const { name } = useContext(Context)
   const { date } = useContext(Context)
   const { items } = useContext(Context)
+
+  window.localStorage.setItem('Name', name);
+  window.localStorage.setItem('Date', date);
 
   return (
     <div className='view-list'>
@@ -21,6 +25,7 @@ const ViewGroceryListPage = () => {
           <div className='list-inputs'>
             <div className='grocery-name'>
               <p>Name: {name}</p>
+              
             </div>
 
             <div className='grocery-date'>
@@ -28,11 +33,7 @@ const ViewGroceryListPage = () => {
             </div>
             <p>Items:</p>
             <div className='view-list-items'>
-              {/* {items.map((items) => {
-                return (
-                  <ol>{items.name}</ol>
-                )
-              })} */}
+
               {items.map((item) => {
                 return <label key={item.groceryId} className='view-items'>
                   <input 

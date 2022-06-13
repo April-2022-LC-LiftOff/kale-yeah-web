@@ -17,6 +17,7 @@ import ViewGroceryListDummy from './components/ViewGroceryListPage/ViewGroceryLi
 function App() {
 
   const {regUsername} = useContext(Context);
+  const {name} = useContext(Context)
 
   return (
     <div>
@@ -27,7 +28,7 @@ function App() {
         <Route path='/ingredient/:id' element={<DisplayIngredient />} exact/>
         <Route path= {`profile/${regUsername}`} element={<ProfilePage />} />
         <Route path='/create-list' element={<CreateGroceryListPage />} exact/>
-        <Route path='/view-list/' element={<ViewGroceryListPage />} exact/>
+        <Route path= {`/view-list/${name}`} element={<ViewGroceryListPage />} />
         <Route path='/recipesearch' element={<RecipeSearchPage />} exact/>
         <Route path='/recipesearch404' element={<RecipeSearchNR />} exact/>
         <Route path='/recipe/:id' element={<DisplayRecipe />} exact/>
