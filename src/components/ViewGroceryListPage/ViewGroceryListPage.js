@@ -1,4 +1,4 @@
-import React, {useContext, useEffect } from "react";
+import React, {useContext} from "react";
 import Header from '../HeaderBar/Header'
 import Footer from '../Navigation/Footer'
 import YourLists from '../ProfilePage/YourLists'
@@ -10,7 +10,6 @@ const ViewGroceryListPage = () => {
   const { name } = useContext(Context)
   const { date } = useContext(Context)
   const { items } = useContext(Context)
-  const { grocerylist, setGrocerylist } = useContext(Context)
 
   window.localStorage.setItem('Name', name);
   window.localStorage.setItem('Date', date);
@@ -39,7 +38,6 @@ const ViewGroceryListPage = () => {
                 return (
                   <ol>{items.name}</ol>
                 )
-                
               })}
             </div>
           </div>
