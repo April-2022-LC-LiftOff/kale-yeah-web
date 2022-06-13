@@ -8,12 +8,11 @@ import { useContext } from 'react'
 import { useNavigate } from 'react-router';
 const Image = require('../IngredientPage/placeholder-img.png')
 
-
 const CreateGroceryListPage = () => {
   const [ingredient, setIngredient] = useState("");
   const [data, setData] = useState([]);
   const components = [];
-  const [items, setItems] = useState([]);
+  const {items, setItems} = useContext(Context);
   const [toBeDeleted, setToBeDeleted] = useState([]);
 
     const renderComponents = () => {
@@ -44,7 +43,7 @@ const CreateGroceryListPage = () => {
         components.push(renderComponent());
       })
     }
-
+console.log(items)
     const handleCheck = (key) => {
         if (!toBeDeleted.includes(key)){
           setToBeDeleted([...toBeDeleted, key])

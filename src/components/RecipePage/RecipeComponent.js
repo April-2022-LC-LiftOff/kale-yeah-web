@@ -18,7 +18,7 @@ const RecipeComponent = (props) => {
       
       <div id='ingredient-btn'>
         <button>
-          Add to Favorites
+          Save Recipe
         </button>
       </div>
       <div id='ingredient-btn'>

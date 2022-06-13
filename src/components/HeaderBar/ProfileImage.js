@@ -1,10 +1,9 @@
 import './ProfileImage.css'
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 const Cabbage = require('../../images/cabbagehead.png')
 import { Context } from '../../Context';
 import { useState } from 'react';
 import HomeModal from './HomeModal';
-
 
 const ProfileImage = (props) => {
 
