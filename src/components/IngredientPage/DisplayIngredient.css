@@ -1,0 +1,51 @@
+.display-ing h1 {
+    font-size: 80px;
+    margin-top: 35px;
+    margin-left: 10px;
+    color: black;
+    max-width: 650px;
+}
+
+.ing-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1024px;
+    flex-direction: row;
+    margin-top: -20px;
+}
+
+.container-left {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2;
+    border-right: solid
+}
+
+.container-right {
+    display: flex;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.ingredient-img-lg {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 350px;
+    height: 350px;
+}
+
+.ing-specs {
+    margin-left: 10px;
+}
+
+.ing-specs h2 {
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.ing-specs p {
+    margin-top: 5px;
+    font-size: 20px;
+}
