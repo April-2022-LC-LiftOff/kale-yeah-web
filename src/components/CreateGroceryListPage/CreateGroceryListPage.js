@@ -43,7 +43,7 @@ const CreateGroceryListPage = () => {
         components.push(renderComponent());
       })
     }
-console.log(items)
+
     const handleCheck = (key) => {
         if (!toBeDeleted.includes(key)){
           setToBeDeleted([...toBeDeleted, key])

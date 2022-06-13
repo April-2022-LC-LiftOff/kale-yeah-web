@@ -6,6 +6,10 @@
     max-width: 650px;
 }
 
+.create-list p {
+    font-size: 20px;
+}
+
 .name {
     display: flex;
     flex-direction: row;

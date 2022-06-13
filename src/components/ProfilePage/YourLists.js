@@ -1,15 +1,21 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './YourLists.css'
 
 const YourLists = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <h2>Your Lists</h2>
 
       <ul className='list-lists'>
-          <li>Farmer's Market for raw milk, etc</li>
-          <li>Fresh Thyme for mangoes, etc</li>
-          <li>Taco Bell, shhh don't tell the wife</li>
+          <a onClick={() => {
+          navigate(`../list/farmers-market`, {state: {name: "Farmer's Market for raw milk", date:'06-11-22', item1: 'Milk', item2: 'Carrots', item3: 'Radishes', item4: 'Steak', item5: 'Coffee'}});
+        }}><li>Farmer's Market for raw milk</li></a>
+          <a onClick={() => {
+          navigate(`../list/fresh-thyme`, {state: {name: "Fresh Thyme for mangoes", date:'06-12-22', item1: 'Mango', item2: 'Coconut milk', item3: 'Ketchup', item4: 'Cake Pops', item5: 'Coffee'}});
+        }}><li>Fresh Thyme for mangoes</li></a>
       </ul>
 
     </div>
