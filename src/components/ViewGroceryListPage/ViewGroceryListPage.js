@@ -13,7 +13,6 @@ const ViewGroceryListPage = () => {
 
   window.localStorage.setItem('Name', name);
   window.localStorage.setItem('Date', date);
- 
 
   return (
     <div className='view-list'>
@@ -34,18 +33,31 @@ const ViewGroceryListPage = () => {
             </div>
             <p>Items:</p>
             <div className='view-list-items'>
-              {items.map((items) => {
-          
-                return (
-                  <ol>{items.name}</ol>
-                )
+
+              {items.map((item) => {
+                return <label key={item.groceryId} className='view-items'>
+                  <input 
+                  type='checkbox'
+               // onChange={() => {handleCheck(item.groceryId)}}
+                 />
+                <p>{item.name}</p>
+                </label>
               })}
             </div>
           </div>
+
+          {/* <div className="pantry-btn" id='pantry-btn'>
+            <button>
+             Add to Pantry
+            </button>
+          </div> */}
+
         </div>
+        
         <div className='container-right'>
           <YourLists />
         </div>
+      
       </div>
       <Footer />
     </div>

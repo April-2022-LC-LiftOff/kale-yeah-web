@@ -11,6 +11,7 @@ import RecipeSearchPage from './components/RecipePage/RecipeSearchPage';
 import RecipeSearchNR from './components/RecipePage/RecipeSearchNR';
 import DisplayIngredient from './components/IngredientPage/DisplayIngredient';
 import DisplayRecipe from './components/RecipePage/DisplayRecipe';
+import ViewGroceryListDummy from './components/ViewGroceryListPage/ViewGroceryListDummy';
 
 
 function App() {
@@ -31,8 +32,8 @@ function App() {
         <Route path='/recipesearch' element={<RecipeSearchPage />} exact/>
         <Route path='/recipesearch404' element={<RecipeSearchNR />} exact/>
         <Route path='/recipe/:id' element={<DisplayRecipe />} exact/>
+        <Route path='/list/:name' element={<ViewGroceryListDummy />} exact/>      
       </Routes>
-  
     </div>
   );
 
