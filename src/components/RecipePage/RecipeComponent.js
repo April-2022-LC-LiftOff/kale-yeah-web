@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import IngredientButton from '../IngredientPage/IngredientButton';
 import './RecipeComponent.css'
 
-const RecipeComponent = (props) => {
+const RecipeComponent = (props) => { 
+
+  const navigate = useNavigate()
+
+  const redirectRecipe = () => {
+    navigate(`recipes/${props.name}`)
+  }
 
   return (
     <div className='recipe-component'>
@@ -12,8 +19,8 @@ const RecipeComponent = (props) => {
       <p>Calories: {Math.floor(Math.random()*500)}</p>
       
       <div id='ingredient-btn'>
-        <button>
-          Add to Favorites
+        <button onClick={redirectRecipe}>
+          Save Recipe
         </button>
       </div>
       <div id='ingredient-btn'>
