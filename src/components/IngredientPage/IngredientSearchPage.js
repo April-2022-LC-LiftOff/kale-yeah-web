@@ -30,7 +30,7 @@ const IngredientPage = () => {
       const name = item.name.charAt(0).toUpperCase() + item.name.slice(1);
       const renderComponent = () => {
         return (
-          <IngredientComponent key={key} name={name} image={item.image} />
+          <IngredientComponent key={key} name={name} image={item.image} id={item.id}/>
         )
       }
       components.push(renderComponent());

@@ -1,16 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import IngredientButton from '../IngredientPage/IngredientButton';
 import './RecipeComponent.css'
 
 const RecipeComponent = (props) => { 
 
   return (
     <div className='recipe-component'>
-      <h2>{props.name}</h2>
-      <img className="recipe-img" src={props.image} alt={props.name}></img>
-      <p>Price: ${Math.floor(Math.random()*10)}.{Math.floor(Math.random()*100)}</p>
-      <p>Calories: {Math.floor(Math.random()*500)}</p>
+      <a className='link' 
+        onClick={() => {
+          navigate(`../recipe/${props.id}`, {state: {name: props.name, image: props.image}});
+        }}><h2>{props.name}</h2>
+      <img className="ingredient-img" src={props.image} alt={props.name}></img></a>
+      <p>Prep Time: {Math.floor(Math.random()*100)+1} mins</p>
+      <p>Cook Time: {Math.floor(Math.random()*100)+1} mins</p>
+      <p>Yield: {Math.floor(Math.random()*12)+1} servings</p>
       
       <div id='ingredient-btn'>
         <button>

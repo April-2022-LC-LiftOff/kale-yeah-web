@@ -22,3 +22,9 @@
     font-size: 20px;
     margin-left: 5px;
 }
+
+.link {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}
