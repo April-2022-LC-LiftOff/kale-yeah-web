@@ -17,9 +17,13 @@ function CreateModal2({ closeModal }) {
     }
   
     function handleClickLogout() {
-      localStorage.removeItem('Username');
       navigate('/')
-    }
+      window.localStorage.clear()
+      window.location.reload
+
+     
+     }
+    
   
     return (
       <div className='modal'>
@@ -51,5 +55,6 @@ function CreateModal2({ closeModal }) {
   
     )
 }
+
   
   export default CreateModal2

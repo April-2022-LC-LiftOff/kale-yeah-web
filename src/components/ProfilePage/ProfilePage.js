@@ -9,7 +9,7 @@ import './ProfilePage.css'
 const ProfilePage = () => {
 
     const { regUsername, setRegUsername } = useContext(Context);
-
+    const {name} = useContext(Context)
       
   return (
     <div className='profile-page'>

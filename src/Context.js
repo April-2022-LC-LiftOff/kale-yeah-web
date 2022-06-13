@@ -13,7 +13,6 @@ export const ContextProvider = ({ children }) => {
         setRegUsername((window.localStorage.getItem('Username')));
     }, []);
 
-    console.log(regUsername)
 
     try {
         const result = window.localStorage.getItem('Username');
@@ -22,6 +21,16 @@ export const ContextProvider = ({ children }) => {
 
         console.log('error', err);
     }
+
+    useEffect(() => {
+        setName((window.localStorage.getItem('Name')));
+    }, []);
+
+    useEffect(() => {
+        setDate((window.localStorage.getItem('Date')));
+    }, []);
+
+
     
      return (
         <Context.Provider value={{ regUsername, setRegUsername, name, setName, date, setDate, items, setItems}}>
