@@ -10,8 +10,10 @@ const YourLists = () => {
 
       <ul className='list-lists'>
           <li><a href = {`/view-list/${name}`}>{name}</a></li>
-          <li>Fresh Thyme for mangoes, etc</li>
-          <li>Taco Bell, shhh don't tell the wife</li>
+          {window.localStorage.clear}
+
+          <li></li>
+          <li></li>
       </ul>
 
     </div>
