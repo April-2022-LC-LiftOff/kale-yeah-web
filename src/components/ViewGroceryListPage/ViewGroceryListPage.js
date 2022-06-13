@@ -26,6 +26,7 @@ const ViewGroceryListPage = () => {
           <div className='list-inputs'>
             <div className='grocery-name'>
               <p>Name: {name}</p>
+              
             </div>
 
             <div className='grocery-date'>
