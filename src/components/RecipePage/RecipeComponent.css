@@ -1,24 +1,24 @@
-.ingredient-component {
+.recipe-component {
     background-color: #9C774A;
     border: 1px black solid;
     padding-bottom: 50px;
     box-shadow: 3px 2px 2px black;
 }
 
-.ingredient-img {
+.recipe-img {
     width: 90%;
     height: 70%;
     object-fit: contain;
 }
 
-.ingredient-component h2 {
+.recipe-component h2 {
     font-size: 30px;
     margin-top: 5px;
     margin-left: 5px;
     margin-bottom: 10px;
 }
 
-.ingredient-component p {
+.recipe-component p {
     font-size: 20px;
     margin-left: 5px;
 }

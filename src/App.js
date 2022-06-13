@@ -7,6 +7,8 @@ import ViewGroceryListPage from './components/ViewGroceryListPage/ViewGroceryLis
 import React, { useContext } from "react";
 import {Context} from './Context'
 import IngredientSearchNR from './components/IngredientPage/IngredientSearchNR';
+import RecipeSearchPage from './components/RecipePage/RecipeSearchPage';
+import RecipeSearchNR from './components/RecipePage/RecipeSearchNR';
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
         <Route path= {`profile/${regUsername}`} element={<ProfilePage />} />
         <Route path='/create-list' element={<CreateGroceryListPage />} exact/>
         <Route path='/view-list' element={<ViewGroceryListPage />} exact/>
+        <Route path='/recipesearch' element={<RecipeSearchPage />} exact/>
+        <Route path='/recipesearch404' element={<RecipeSearchNR />} exact/>
       </Routes>
   
     </div>

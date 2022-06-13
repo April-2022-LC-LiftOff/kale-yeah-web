@@ -1,0 +1,32 @@
+.recipe-page h1 {
+    font-size: 80px;
+    margin-top: 35px;
+    margin-left: 10px;
+    color: black;
+    max-width: 650px;
+}
+
+.recipe-page h2 {
+    margin-left: 10px;
+}
+
+@media(min-width:768px) {
+
+    .results-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1024px;
+        margin-top: -20px;
+        flex-wrap: wrap;
+    }
+
+    .results-box {
+        flex-basis: 32%;
+        max-width: 328px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        flex-grow: 1;
+      }
+
+}
