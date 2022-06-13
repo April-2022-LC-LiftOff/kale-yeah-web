@@ -10,6 +10,8 @@ import IngredientSearchNR from './components/IngredientPage/IngredientSearchNR';
 import RecipeSearchPage from './components/RecipePage/RecipeSearchPage';
 import RecipeSearchNR from './components/RecipePage/RecipeSearchNR';
 import DisplayIngredient from './components/IngredientPage/DisplayIngredient';
+import DisplayRecipe from './components/RecipePage/DisplayRecipe';
+
 
 function App() {
 
@@ -27,6 +29,7 @@ function App() {
         <Route path='/view-list' element={<ViewGroceryListPage />} exact/>
         <Route path='/recipesearch' element={<RecipeSearchPage />} exact/>
         <Route path='/recipesearch404' element={<RecipeSearchNR />} exact/>
+        <Route path='/recipe/:id' element={<DisplayRecipe />} exact/>
       </Routes>
   
     </div>
