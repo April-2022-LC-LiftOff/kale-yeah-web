@@ -10,20 +10,31 @@ const SearchBar = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await axios.get(`http://localhost:8080/ingredients/${ingredient}`,
-        {headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' }});
-    if (result.data.results.length === 0) {
-        navigate('/ingredientsearch404', {state: {param: ingredient}});
-        window.location.reload(false);
-    } else {
-        navigate(`/ingredientsearch?name=${ingredient}`);
-        window.location.reload(false);
+    if (ingredientsChecked === false && recipesChecked === false){
+        window.alert("Please select ingredients or recipes")
+    }
+    if (ingredientsChecked === true){
+        const result = await axios.get(`http://localhost:8080/ingredients/${ingredient}`,
+            {headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' }});
+            if (result.data.results.length === 0) {
+                navigate('/ingredientsearch404', {state: {param: ingredient}});
+                window.location.reload(false);
+            } else {
+                navigate(`/ingredientsearch?name=${ingredient}`);
+                window.location.reload(false);
+            }
+    } else if (recipesChecked === true){
+        const result = await axios.get(`http://localhost:8080/recipes/${ingredient}`,
+            {headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' }});
+            if (result.data.results.length === 0) {
+                navigate('/recipesearch404', {state: {param: ingredient}});
+                window.location.reload(false);
+            } else {
+                navigate(`/recipesearch?name=${ingredient}`);
+                window.location.reload(false);
+            }
     }
   };
-
-  
-// we'll need to refactor above to link to recipe page when
-// the time comes. I presume a simple if, then in handleSubmit()
 
   const [ingredientsChecked, setIngredientsChecked] = useState(false);
   const [recipesChecked, setRecipesChecked] = useState(false);

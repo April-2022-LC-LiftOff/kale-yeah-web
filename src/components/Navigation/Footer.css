@@ -3,7 +3,6 @@
   text-align: center;
   margin-top: 15px;
   padding-bottom: 15px;
-  /* padding-top: 10px; */
   border: 1px solid black;
   max-width: 1024px;
   font-family: 'Gadugi', sans-serif;
@@ -14,4 +13,5 @@
 
 .footer p {
 margin-top: 10px;
+font-size: 20px;
 }
