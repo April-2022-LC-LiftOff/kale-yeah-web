@@ -18,9 +18,6 @@ function CreateModal2({ closeModal }) {
   
     function handleClickLogout() {
       navigate('/')
-      window.localStorage.clear()
-      window.location.reload
-
      
      }
     
