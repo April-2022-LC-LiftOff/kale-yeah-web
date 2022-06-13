@@ -17,6 +17,7 @@ function CreateModal2({ closeModal }) {
     }
   
     function handleClickLogout() {
+      localStorage.removeItem('Username');
       navigate('/')
     }
   
